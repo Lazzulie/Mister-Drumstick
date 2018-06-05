@@ -5,6 +5,10 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
+import boto
+from boto.s3.connection import S3Connection
+s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+
 
 bot = commands.Bot(command_prefix="!")
 
@@ -203,4 +207,4 @@ async def on_message(message):
 	elif msg.upper().startswith("RELEASE RESTRAINT LEVEL 0"):
 		await bot.send_message(message.channel, "I'm gonna go for a walk...")
 		
-bot.run(process.env.BOT_TOKEN) # Note: Do not give another person your token, they will have access to your bot's account. For this reason, my token is not included.
+bot.run(BOT_TOKEN) # Note: Do not give another person your token, they will have access to your bot's account. For this reason, my token is not included.
