@@ -71,7 +71,7 @@ async def on_message(message):
 			print("Report from a user")
 			reporter = message.author.display_name + " ({})".format(message.author.name + "#" + message.author.discriminator)
 			report = "----------------------------------------\n**Report from {}:**".format(reporter) + "\n@here\n{}".format(msg[8:]) + "\n----------------------------------------"
-			await bot.send_message(bot.get_channel("447763541127331853"), report)
+			await bot.send_message(bot.get_channel("453944985243484161"), report)
 			await bot.send_message(message.channel, "Sent report.")
 
 		elif msg.upper().startswith("!SUPPORT"):
@@ -89,7 +89,7 @@ async def on_message(message):
 				await bot.send_message(message.channel, "You do not have the Mod Rank.")
 		
 		elif msg.upper()[:7] == "!COLOR ": # Rank Changer
-			colors = ["gray", "dark green", "brown", "gold", "pink", "green", "orange", "light purple"]
+			colors = ["gray", "dark green", "brown", "gold", "pink", "green", "orange", "purple"]
 			
 			currentRoles = message.author.roles
 			hasAColorRank = False
@@ -184,7 +184,7 @@ async def on_message(message):
 						await bot.send_message(message.channel, "Error: You require the 'Champion' rank in order to use that color.")
 					
 		elif msg.upper().startswith("!REMOVECOLOR"):
-			colors = ["gray", "dark green", "brown", "gold", "pink", "green", "orange", "light purple"]
+			colors = ["gray", "dark green", "brown", "gold", "pink", "green", "orange", "purple"]
 			currentRoles = message.author.roles
 			hasAColorRank = False
 
