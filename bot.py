@@ -7,7 +7,6 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 
-print("Token: " + TOKEN)
 bot = commands.Bot(command_prefix="!")
 
 def getRole(roleList, roleName):
