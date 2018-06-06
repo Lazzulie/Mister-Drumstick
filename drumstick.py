@@ -7,7 +7,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+BOT_TOKEN = os.environ.get(BOT_TOKEN, None)
 
 bot = commands.Bot(command_prefix="!")
 
