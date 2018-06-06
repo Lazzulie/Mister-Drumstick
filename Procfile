@@ -1,1 +1,1 @@
-worker: python drumstick.py
+worker: python bot.py
