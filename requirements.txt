@@ -1,4 +1,4 @@
-git+https://github.com/python/cpython/blob/master/Lib/random.py@master
+random==3.7.0
 asyncio
 os
 git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
