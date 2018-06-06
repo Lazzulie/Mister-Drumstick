@@ -1,1 +1,1 @@
-worker: python3 drumstick.py
+worker: python drumstick.py

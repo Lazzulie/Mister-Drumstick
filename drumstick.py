@@ -9,6 +9,7 @@ import asyncio
 
 TOKEN = str(os.getenv("BOT_TOKEN"))
 
+print("Token: " + TOKEN)
 bot = commands.Bot(command_prefix="!")
 
 def getRole(roleList, roleName):
