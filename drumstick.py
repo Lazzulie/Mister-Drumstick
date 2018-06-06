@@ -7,7 +7,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 
-BOT_TOKEN = os.environ.get(BOT_TOKEN, None)
+TOKEN = os.environ["BOT_TOKEN"]
 
 bot = commands.Bot(command_prefix="!")
 
@@ -206,4 +206,4 @@ async def on_message(message):
 	elif msg.upper().startswith("RELEASE RESTRAINT LEVEL 0"):
 		await bot.send_message(message.channel, "I'm gonna go for a walk...")
 		
-bot.run(BOT_TOKEN) # Note: Do not give another person your token, they will have access to your bot's account. For this reason, my token is not included.
+bot.run(TOKEN) # Note: Do not give another person your token, they will have access to your bot's account. For this reason, my token is not included.
