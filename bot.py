@@ -35,16 +35,23 @@ async def on_message(message):
 		elif msg.upper()[:5] == "!RANK" or msg.upper()[:7] == "!LEVELS":
 			return
 		elif msg.upper().startswith("!ASK"):
-			num = random.randint(1, 7)
+			num = random.randint(1, 14)
 			
 			response = { # Makeshift switch statement using a dictionary
 				1: "Yes, definitely.",
-				2: "No, absolutely not!", 
+				2: "No, absolutely not.", 
 				3: "Well, it's a possibility.",
 				4: "The answer to that is hard to know.",
 				5: "There is a 50/50 chance.",
 				6: "I'd say so, yeah.",
-				7: "Probably not."
+				7: "Probably not.",
+				8: "Only you can truly know the answer to that.",
+				9: "Ask CallMeCass, she knows something.",
+				10: "I don't know, but you should subscribe to ish13c.",
+				11: "Nope.",
+				12: "Unfortunately, yes.",
+				13: "The answer to your question rhymes with 'guess'.",
+				14: "Let's just say no and move on."
 			}
 			
 			await bot.send_message(message.channel, response.get(num, "Not sure about that one."))
@@ -52,10 +59,12 @@ async def on_message(message):
 			# space = "\u200b" # Escape character that equats to a blank line, essentially allows me to set an element to be invisible so I can add blanks lines.
 
 			embed=discord.Embed(title="Help Menu", description="Commands:", color=0x113dbd)
-			embed.add_field(name="!ask", value="Answers a yes or no question.\n", inline=False)
-			embed.add_field(name="!color (color)", value="Changes color of username if the user does not have a current color rank and has the appropiate level. Colors: Gray, Dark Green, Brown, Gold, Pink, Green, Orange, and Light Purple.", inline=False)
-			embed.add_field(name="!help", value="Lists all available commands.\n", inline=False)
-			embed.add_field(name="!ping", value="Bot responds with 'Pong!'.\n", inline=False)
+			embed.add_field(name="!help", value="Lists all available commands.", inline=False)
+			embed.add_field(name="!ask", value="Answers a yes or no question.", inline=False)
+			embed.add_field(name="!color (color)", value="Changes color of username if the user does not have a current color rank and has the appropiate level. Colors: Gray, Dark Green, Brown, Gold, Pink, Green, Orange, and Purple.", inline=False)
+			embed.add_field(name="!levels", value="Sends a link to the leaderboards for Mr. Strumstick leveling.")
+			embed.add_field(name="!ping", value="Bot responds with 'Pong!'.", inline=False)
+			embed.add_field(name="!rank", value="Displays the current Mr. Strumstick level of the user.", inline=False)
 			embed.add_field(name="!removecolor", value="Removes the current color rank.", inline=False)
 			embed.add_field(name="!report (username)", value="Sends a report to a staff-only channel.", inline=False)
 			embed.add_field(name="!support", value="Sends a link to the support Google form.", inline = False)
