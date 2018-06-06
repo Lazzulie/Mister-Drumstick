@@ -110,8 +110,6 @@ async def on_message(message):
 
 			if msg.lower()[7:] == "dark green":
 				request = "Dark Green"
-			elif msg.lower()[7:] == "light purple":
-				request = "Light Purple"
 			else:
 				capLetter = msg.upper()[7]
 				requestHalf = msg.lower()[8:] 
@@ -126,7 +124,7 @@ async def on_message(message):
 			championRole = getRole(message.server.roles, "Champion")
 
 			if requestedRole is None or requestedRole.name.lower() not in colors: # Color doesn't exist
-				await bot.send_message(message.channel, "Error: Invalid color. Colors available (some may require a leveling rank):\n- Gray\n- Brown\n- Dark Green\n- Gold \n- Pink\n- Green\n- Orange\n- Light Purple")
+				await bot.send_message(message.channel, "Error: Invalid color. Colors available (some may require a leveling rank):\n- Gray\n- Brown\n- Dark Green\n- Gold \n- Pink\n- Green\n- Orange\n- Purple")
 				return
 			elif requestedRole in currentRoles: # Color exists but you have it
 				await bot.send_message(message.channel, "Error: You already have that color.")
@@ -181,7 +179,7 @@ async def on_message(message):
 							await bot.send_message(message.channel, "Error: Unable to edit roles.")
 					else:
 						await bot.send_message(message.channel, "Error: You require the 'Chief' rank in order to use that color.")
-				elif requestedRole.name == "Light Purple":
+				elif requestedRole.name == "Purple":
 					if championRole in currentRoles:
 						try:
 							await bot.add_roles(message.author, requestedRole)
