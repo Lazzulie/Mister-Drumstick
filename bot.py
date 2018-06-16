@@ -79,7 +79,7 @@ async def on_message(message):
 		elif msg.upper()[:7] == "!REPORT":
 			print("Report from a user")
 			reporter = message.author.display_name + " ({})".format(message.author.name + "#" + message.author.discriminator)
-			report = "----------------------------------------\n**Report from {}:**".format(reporter) + "\n@here\n{}".format(msg[8:]) + "\n----------------------------------------"
+			report = "----------------------------------------\n**Report from {}:**".format(reporter) + " in" + message.channel.name +"\n@here\n{}".format(msg[8:]) + "\n----------------------------------------"
 			await bot.send_message(bot.get_channel("453944985243484161"), report)
 			await bot.send_message(message.channel, "Sent report.")
 
